@@ -16,8 +16,51 @@
 
     <title>Burger Mini Game</title>
 
+    <!-- Primary Meta Tags & title -->
+		<meta name="title" content="Burger Mini Game">
+		<meta name="author" content="Anweshan Roy Chowdhury">
+		<meta name="description" content="Sell some burgers and make some quick money.">
+    <meta name="domain" content="makeburger.anweshan.online">
+
+
+		<!-- Open Graph / Facebook -->
+		<meta property="og:type" content="website">
+		<meta property="og:url" content="https://makeburger.anweshan.online">
+		<meta property="og:title" content="Burger Mini Game">
+		<meta property="og:description" content="Sell some burgers and make some quick money.">
+    <meta property="og:image:width" content="512">
+    <meta property="og:image:height" content="512">
+    <meta property="og:image" content="https://makeburger.anweshan.online/images/og-image.jpg?v=9f7a0a">
+	  <meta property="og:domain" content="makeburger.anweshan.online">
+
+		<!-- Twitter -->
+		<meta property="twitter:card" content="summary">
+		<meta property="twitter:creator" content="@_formula21">
+		<meta property="twitter:url" content="https://makeburger.anweshan.online">
+		<meta property="twitter:title" content="Burger Mini Game">
+		<meta property="twitter:description" content="Sell some burgers and make some quick money.">
+		<meta property="twitter:image" content="https://makeburger.anweshan.online/images/og-image.jpg">
+		<meta property="twitter:domain" content="makeburger.anweshan.online">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+		<link rel="preconnect" href="https://cdn.jsdelivr.net">
+
+		<!-- Icon -->
+		<link rel="icon" href="./favicon.ico" type="image/x-icon"/>
+		<link rel="icon" href="images/icons/hamburger-burger.svg" sizes="any" type="image/svg+xml">
+
+
   </head>
   <body>
 
+      <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js'></script>
+      <script src="js/grain.js"></script>
+      <script src="js/script.js"></script>
+      <script>
+          const el = document.querySelector('.grain');
+          if(el.length == 1){
+            const grain = new Grain(el);
+          }
+      </script>
   </body>
 </html>

@@ -1,0 +1,371 @@
+@font-face {
+  font-family: 'organic';
+  src: url("./fonts/organic_teabags-webfont.woff2") format("woff2"), url("./fonts/organic_teabags-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+* {
+  box-sizing: border-box;
+}
+
+img {
+  -webkit-user-drag: none;
+  -khtml-user-drag: none;
+  -moz-user-drag: none;
+  -o-user-drag: none;
+  user-drag: none;
+}
+
+button {
+  background: #e1d4cc;
+  cursor: poinger;
+  border: 4px solid #452c1e;
+  padding: 10px 20px;
+  font-family: 'organic';
+  border-radius: 10px;
+  font-size: 20px;
+  outline: none;
+}
+
+body {
+  background: #f7ea96;
+  height: 100vh;
+  font-family: 'organic';
+  overflow: hidden;
+}
+body .grain {
+  position: absolute;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+}
+body .game {
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: auto;
+  height: 100vh;
+}
+body .game_inner__overlay {
+  position: fixed;
+  width: 100%;
+  height: 100vh;
+  z-index: 9;
+  background: black;
+  opacity: 0.7;
+  top: 0;
+}
+body .game_inner__end {
+  display: none;
+}
+body .game_inner__tutorial, body .game_inner__end {
+  border: 4px solid #452c1e;
+  padding: 30px;
+  background: white;
+  position: absolute;
+  left: 0;
+  right: 0;
+  z-index: 10;
+  width: 400px;
+  top: 50%;
+  -webkit-transform: translatey(-50%);
+          transform: translatey(-50%);
+  margin: auto;
+  border-radius: 20px;
+}
+body .game_inner__tutorial h1, body .game_inner__end h1 {
+  margin: 0;
+}
+body .game_inner__tutorial p, body .game_inner__end p {
+  font-size: 24px;
+}
+body .game_inner__order .order {
+  position: absolute;
+  left: 0;
+  right: -930px;
+  top: 50%;
+  -webkit-transform: translateY(calc(-50% + 30px));
+  transform: translateY(calc(-50% + 30px));
+  margin: auto;
+  width: 180px;
+  background: #cef5eb;
+  border: 4px solid #3b2314;
+  border-radius: 14px;
+  padding: 50px 20px 20px 20px;
+  font-size: 20px;
+}
+body .game_inner__order .order span {
+  width: 12px;
+  height: 12px;
+  display: block;
+  float: left;
+  margin-right: 10px;
+  border-radius: 4px;
+  border: 2px solid black;
+  top: 8px;
+  position: relative;
+}
+body .game_inner__order .order .cheese {
+  background: yellow;
+}
+body .game_inner__order .order .lettuce {
+  background: green;
+}
+body .game_inner__order .order .patty {
+  background: brown;
+}
+body .game_inner__order .order .ketchup {
+  background: red;
+}
+body .game_inner__order .order .mustard {
+  background: orange;
+}
+body .game_inner__order .order .tomato {
+  background: red;
+}
+body .game_inner__order .message {
+  position: absolute;
+  left: 0;
+  right: -830px;
+  top: 50%;
+  -webkit-transform: translateY(calc(-50% + 30px));
+  transform: translateY(calc(-50% + -108px));
+  margin: auto;
+  width: 210px;
+  z-index: 2;
+  background: #ffffff;
+  border: 4px solid #3b2314;
+  border-radius: 14px;
+  padding: 20px;
+  font-size: 20px;
+}
+body .game_inner__order p {
+  margin: 0;
+}
+body .game_inner__result {
+  position: absolute;
+  width: 1000px;
+  display: none;
+  background: white;
+  left: -50px;
+  font-size: 50px;
+  right: 0;
+  top: 50%;
+  -webkit-transform: translateY(-50%) rotate(-4deg);
+  transform: translateY(-50%) rotate(-4deg);
+  margin: auto;
+  padding: 20px;
+  text-align: center;
+}
+body .game_inner__ui {
+  position: absolute;
+  left: 0;
+  right: -330px;
+  top: 50%;
+  -webkit-transform: translateY(calc(-50% + -300px));
+  transform: translateY(calc(-50% + -300px));
+  margin: auto;
+  width: 310px;
+  background: #fff;
+  border: 4px solid #3b2314;
+  border-radius: 84px;
+  padding: 30px;
+}
+body .game_inner__ui .game_inner__timer {
+  position: relative;
+  top: -2px;
+  margin-left: 4px;
+}
+body .game_inner__ui .game_inner__timer img {
+  position: relative;
+  top: 6px;
+}
+body .game_inner__ui .game_inner__score {
+  position: relative;
+  top: -1px;
+}
+body .game_inner__ui .game_inner__score img {
+  position: relative;
+  top: 6px;
+}
+body .game_inner__ui div {
+  float: left;
+  margin-right: 20px;
+  font-size: 30px;
+}
+body .game_inner__elements {
+  background: url("./images/gamefiles//gb_bg.png");
+  overflow: hidden;
+  width: 900px;
+  background-position: 10px -164px;
+  background-size: 1000px;
+  height: 600px;
+  border: 4px solid #3b2314;
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: auto;
+  top: 50%;
+  border-radius: 1000px;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+}
+@media only screen and (max-width: 1000px) {
+  body .game_inner__elements {
+    border-radius: 0;
+    -webkit-transform: translateY(-50%) scale(0.8);
+    transform translateY(-50%) scale(0.8);
+    width: auto;
+  }
+}
+@media only screen and (max-width: 800px) {
+  body .game_inner__elements {
+    border-radius: 0;
+    -webkit-transform: translateY(-50%) scale(0.7);
+    transform translateY(-50%) scale(0.7);
+    width: auto;
+  }
+}
+body .game_inner__elements div {
+  cursor: pointer;
+}
+body .game_inner__elements div:hover > .tooltip {
+  opacity: 1;
+  bottom: -16px;
+}
+body .game_inner__elements div .tooltip {
+  background: white;
+  position: absolute;
+  transition: all 0.3s;
+  width: 100px;
+  z-index: 23;
+  opacity: 0;
+  padding: 10px 28px;
+  border-radius: 30px;
+  pointer-events: none;
+  color: #3b2314;
+  border: 4px solid #3b2314;
+  bottom: -26px;
+  font-size: 18px;
+  left: 0;
+  text-align: center;
+  right: 0;
+  margin: auto;
+}
+body .game_inner__elements .till {
+  position: absolute;
+  right: -50px;
+  bottom: 108px;
+}
+body .game_inner__elements .till .tooltip {
+  right: 120px;
+}
+body .game_inner__elements .counter {
+  background: #b96544;
+  width: 1080px;
+  height: 280px;
+  border: 4px solid #382920;
+  position: absolute;
+  right: -80px;
+  z-index: 0;
+  bottom: -158px;
+}
+body .game_inner__elements .patty {
+  position: absolute;
+  bottom: 114px;
+  left: -30px;
+}
+body .game_inner__elements .mustard {
+  position: absolute;
+  bottom: 114px;
+  left: 660px;
+}
+body .game_inner__elements .ed {
+  position: absolute;
+  left: 370px;
+  bottom: 83px;
+  z-index: -1;
+}
+body .game_inner__elements .car {
+  position: absolute;
+  transition: all 0.3s;
+  bottom: -90px;
+}
+body .game_inner__elements .ketchup {
+  position: absolute;
+  bottom: 114px;
+  left: 590px;
+}
+body .game_inner__elements .restart {
+  position: absolute;
+  bottom: 84px;
+  -webkit-transform-origin: 33px 33px;
+          transform-origin: 33px 33px;
+  left: 470px;
+  transition: all 0.3s;
+  z-index: 2;
+}
+body .game_inner__elements .restart:hover {
+  -webkit-transform: rotate(360deg);
+          transform: rotate(360deg);
+}
+body .game_inner__elements .burger {
+  position: absolute;
+  left: 410px;
+  bottom: 130px;
+}
+body .game_inner__elements .burger img.top, body .game_inner__elements .burger img.bottom {
+  position: absolute;
+}
+body .game_inner__elements .burger img.bottom {
+  bottom: -12px;
+}
+body .game_inner__elements .burger img.top {
+  left: -3px;
+  top: -32px;
+}
+body .game_inner__elements .burger_lettuce {
+  position: relative;
+  height: 6px;
+  left: -9px;
+}
+body .game_inner__elements .burger_patty {
+  position: relative;
+  height: 14px;
+  left: -2px;
+}
+body .game_inner__elements .burger_cheese {
+  position: relative;
+  height: 6px;
+  left: -4px;
+}
+body .game_inner__elements .burger_tomato {
+  position: relative;
+  height: 9px;
+  left: -2px;
+}
+body .game_inner__elements .burger_mustard {
+  position: relative;
+  height: 11px;
+  left: -5px;
+}
+body .game_inner__elements .burger_ketchup {
+  position: relative;
+  height: 11px;
+  left: -5px;
+}
+body .game_inner__elements .tomato {
+  position: absolute;
+  bottom: 377px;
+  left: 215px;
+}
+body .game_inner__elements .lettuce {
+  position: absolute;
+  bottom: 377px;
+  left: 100px;
+}
+body .game_inner__elements .cheese {
+  position: absolute;
+  bottom: 377px;
+  left: -15px;
+}

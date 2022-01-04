@@ -22,7 +22,7 @@ let createOrder = (difficulty) => {
     }
 
     if($.inArray('patty', burger_stack) < 0){
-      let rand = Math.flooe(Math.random() * Math.floor(burger_stack.length - 1));
+      let rand = Math.floor(Math.random() * Math.floor(burger_stack.length - 1));
       burger_stack.splice(rand, 1, 'patty');
     }
 

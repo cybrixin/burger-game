@@ -1,8 +1,21 @@
-const game = $('.game_inner__elements'), ingredients = game.find('div.ingredient'), scoreElement = $('.game_inner__score'), scoreMax = 10, scoreMin = 7.5, roundTimeElement = $('.game_inner__timer span'), till = game.find('.till'), burger = game.find('.burger'), orderElement = $('.game_inner__order');
+const game = $('.game_inner__elements'), ingredients = game.find('div.ingredient'), scoreElement = $('.game_inner__score span'), scoreMax = 10, scoreMin = 7.5, roundTimeElement = $('.game_inner__timer span'), till = game.find('.till'), burger = game.find('.burger'), orderElement = $('.game_inner__order'), totalTime = 120;
 
 console.log(ingredients)
 
-var score = 0, difficulty = 2, roundTime = 1000, currentIngredients = new Array();
+let score = 0, difficulty = 2, roundTime = totalTime, currentIngredients = new Array(), gameStarted = false;
+
+roundTimeElement.html(totalTime);
+
+$("#restartGame").click(() => {
+  score = 0;
+  difficulty = 2;
+  roundTime = totalTime;
+  currentIngredients = new Array();
+  gameStarted = false;
+  roundTimeElement.html(totalTime);
+  $(".game_inner__overlay").show().next().show();
+  $('.game_inner__end').hide();
+});
 
 let createOrder = (difficulty) => {
     let order_ingredients = [
@@ -66,7 +79,7 @@ let nextOrder = (size) => {
     });
 };
 
-$('.restart').click( () => {
+$('.restart').click( _ => {
     burger.fadeOut( () => {
         burger.html('<img class="top" src="./images/gamefiles/gb_bun_top.png"><img class="bottom" src="./images/gamefiles/gb_bun_bottom.png">');
         burger.fadeIn();
@@ -112,7 +125,7 @@ let checkIngredients = (ingredients, order) => {
         }
     }
 
-    return 'No Good';
+    return 'Not Good';
 }
 
 
@@ -131,53 +144,58 @@ till.click(function() {
     $('.game_inner__result').fadeIn();
     $('.game_inner__result').html(result)
 
+
     setTimeout(function(){
         $('.game_inner__result').fadeOut();
-    },300)
+    },300);
 
-    scoreElement.html(`$${score}`);
+    scoreElement.html(`₹${score}`);
 
     nextOrder(difficulty);
 });
 
 
-let gameStarted = false;
+
 
 $('#begin').click(function(e){
     gameStarted = true;
+    console.log($(this).parent(), $(this).parent().prev());
     $(this).parent().hide().prev().hide();
     roundTimer();
 });
 
+let interval = null;
+
 let roundTimer = _ => {
 
-    setInterval( _ => {
-        if(roundTime > 1) {
+    interval = setInterval( _ => {
+        if(roundTime >= 1) {
             roundTime --;
+
             roundTimeElement.html(roundTime);
 
-            if(score > 10) {
+
+
+            if(score > 120) {
+                difficulty = 8
+            }else if(score > 100) {
+                difficulty = 7
+            }else if(score > 80) {
+                difficulty = 6
+            }else if(score > 60) {
+                difficulty = 5
+            }else if(score > 40) {
+                difficulty = 4
+            }else if(score > 20){
                 difficulty = 3
             }
 
-            if(score > 30) {
-                difficulty = 4
-            }
-
-            if(score > 70) {
-                difficulty = 5
-            }
-            if(score > 120) {
-                difficulty = 6
-            }
-            if(score > 170) {
-                difficulty = 7
-            }
+            console.log({score: score, difficulty: difficulty});
         } else {
             $('.game_inner__end').show();
             $('.game_inner__overlay').show();
-            $('.game_inner__end p').html(`Good Job. You helped Ed make $${score} today.`);
-
+            $('.game_inner__end p span').html(`${score}`);
+            clearInterval(interval);
         }
     },1000);
 };

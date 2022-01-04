@@ -1,6 +1,6 @@
 @font-face {
   font-family: 'organic';
-  src: url("./fonts/organic_teabags-webfont.woff2") format("woff2"), url("./fonts/organic_teabags-webfont.woff") format("woff");
+  src: url("../fonts/organic_teabags-webfont.woff2") format("woff2"), url("../fonts/organic_teabags-webfont.woff") format("woff");
   font-weight: normal;
   font-style: normal;
 }
@@ -194,7 +194,7 @@ body .game_inner__ui div {
   font-size: 30px;
 }
 body .game_inner__elements {
-  background: url("./images/gamefiles//gb_bg.png");
+  background: url("../images/gamefiles/gb_bg.png");
   overflow: hidden;
   width: 900px;
   background-position: 10px -164px;

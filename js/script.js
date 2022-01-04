@@ -81,7 +81,7 @@ ingredients.click( () => {
     add(clickedIngredient, clickedIngredientEl);
 });
 
-const add = (ingredent, ingredientEl) {
+const add = (ingredent, ingredientEl) => {
   burger.append(ingredientEl);
   currentIngredients.push(ingredent);
 };

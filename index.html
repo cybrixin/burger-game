@@ -50,7 +50,48 @@
 		<link rel="icon" href="images/icons/hamburger-burger.svg" sizes="any" type="image/svg+xml">
   </head>
   <body>
-
+      <div class="game">
+        <div class="game_inner">
+          <div class="game_inner__end">
+            <h1>Time up!</h1>
+            <p>Good Job. You helped Ed make ₹2000 today.</p>
+            <button onlick="window.location.roload();">Restart</button>
+          </div>
+          <div class="game_inner__overlay"></div>
+          <div class="game_inner__tutorial">
+            <h1>Good Burger mini game</h1>
+            <p>Make the customers order by clicking on the ingredients needed.</p>
+            <p>Click on the till when you are ready to server. Get bonus points for getting the ingredients in the correct order.</p>
+            <button>Begin</button>
+          </div>
+          <div class="game_inner__elments">
+            <div class="lettuce ingredient">
+              <img src="./images/gamefiles/gb_lettuce.png">
+              <div class="tooltip">Lettuce</div>
+            </div>
+            <div class="tomato ingredient">
+              <img src="./images/gamefiles/gb_tomato.png">
+              <div class="tooltip">Tomato</div>
+            </div>
+            <div class="cheese ingredient">
+              <img src="./images/gamefiles/gb_cheese.png">
+              <div class="tooltip">Cheese</div>
+            </div>
+            <div class='ketchup ingredient'>
+              <img src='./images/gamefiles/gb_ketchup.png'>
+              <div class='tooltip'>
+                Ketchup
+              </div>
+            </div>
+            <div class='mustard ingredient'>
+              <img src='./images/gamefiles/gb_mustard.png'>
+              <div class='tooltip'>
+                Mustard
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
       <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js'></script>
       <script src="js/grain.js"></script>
       <script src="js/script.js"></script>

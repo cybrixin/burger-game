@@ -18,7 +18,7 @@ img {
 
 button {
   background: #e1d4cc;
-  cursor: poinger;
+  cursor: pointer;
   border: 4px solid #452c1e;
   padding: 10px 20px;
   font-family: 'organic';
@@ -214,7 +214,7 @@ body .game_inner__elements {
   body .game_inner__elements {
     border-radius: 0;
     -webkit-transform: translateY(-50%) scale(0.8);
-    transform translateY(-50%) scale(0.8);
+    transform: translateY(-50%) scale(0.8);
     width: auto;
   }
 }
@@ -222,7 +222,7 @@ body .game_inner__elements {
   body .game_inner__elements {
     border-radius: 0;
     -webkit-transform: translateY(-50%) scale(0.7);
-    transform translateY(-50%) scale(0.7);
+    transform: translateY(-50%) scale(0.7);
     width: auto;
   }
 }

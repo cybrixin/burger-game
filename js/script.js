@@ -1,5 +1,7 @@
 const game = $('.game_inner__elements'), ingredients = game.find('div.ingredient'), scoreElement = $('.game_inner__score'), scoreMax = 10, scoreMin = 7.5, roundTimeElement = $('.game_inner__timer span'), till = game.find('.till'), burger = game.find('.burger'), orderElement = $('.game_inner__order');
 
+console.log(ingredients)
+
 var score = 0, difficulty = 2, roundTime = 1000, currentIngredients = new Array();
 
 let createOrder = (difficulty) => {
@@ -74,11 +76,14 @@ $('.restart').click( () => {
 
 nextOrder(difficulty);
 
-
-ingredients.click( () => {
-    let clickedIngredient = $(this).attr('class').split(' ')[0];
+ingredients.each( (a, b) =>{
+  console.log(b);
+  $(b).click( (e) => {
+    let target = e.currentTarget;
+    let clickedIngredient = $(target).attr('class').split(' ')[0];
     let clickedIngredientEl = `<div class="burger_${clickedIngredient}"><img src="./images/gamefiles/gb_burger_${clickedIngredient}.png"/></div>`;
     add(clickedIngredient, clickedIngredientEl);
+  })
 });
 
 const add = (ingredent, ingredientEl) => {
@@ -138,7 +143,7 @@ till.click(function() {
 
 let gameStarted = false;
 
-$('button').click( () => {
+$('#begin').click(function(e){
     gameStarted = true;
     $(this).parent().hide().prev().hide();
     roundTimer();

@@ -54,8 +54,8 @@
         <div class="game_inner">
           <div class="game_inner__end">
             <h1>Time up!</h1>
-            <p>Good Job. You helped Ed make ₹2000 today.</p>
-            <button onlick="window.location.roload();">Restart</button>
+            <p>Good Job. You helped Ed make ₹<span id="money"></span> today.</p>
+            <button id="restartGame">Restart</button>
           </div>
           <div class="game_inner__overlay"></div>
           <div class="game_inner__tutorial">
@@ -124,7 +124,7 @@
         <div class="game_inner__ui">
           <div class="game_inner__timer">
             <img src="./images/gamefiles/gb_timer.png">
-            <span>1000</span>
+            <span>120</span>
           </div>
           <div class="game_inner__score">
             <img src="./images/gamefiles/gb_score.png">

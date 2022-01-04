@@ -62,7 +62,7 @@
             <h1>Good Burger mini game</h1>
             <p>Make the customers order by clicking on the ingredients needed.</p>
             <p>Click on the till when you are ready to server. Get bonus points for getting the ingredients in the correct order.</p>
-            <button>Begin</button>
+            <button id="begin">Begin</button>
           </div>
           <div class="game_inner__elements">
             <div class="lettuce ingredient">
@@ -89,17 +89,56 @@
                 Mustard
               </div>
             </div>
+            <div class="patty ingredient">
+              <img src="./images/gamefiles/gb_patty.png">
+              <div class="tooltip">Patty</div>
+          </div>
+          <div class="burger">
+            <img src="./images/gamefiles/gb_bun_top.png" class="top" alt="Top Bun of the burger.">
+            <img src="./images/gamefiles/gb_bun_bottom.png" class="bottom" alt="Bottom Bun of the burger.">
+          </div>
+          <div class="restart">
+            <img src="./images/gamefiles/gb_restart.png">
+          </div>
+          <div class="till">
+            <img src="./images/gamefiles/gb_till.png">
+            <div class="tooltip">Serve</div>
+          </div>
+          <div class="counter"></div>
+          <div class='ed'>
+            <img src='./images/gamefiles/gb_ed.png'>
+          </div>
+          <div class="car">
+            <img src="./images/gamefiles/gb_car.png">
+          </div>
+          <div class="game_inner__result">Perfect</div>
+        </div>
+        <div class="game_inner__order">
+          <div class="message">
+            <p>Welcome to Burger King!</p>
+            <p>Home of the Good Burger</p>
+            <p>Can I take your order?</p>
+          </div>
+        </div>
+        <div class="game_inner__ui">
+          <div class="game_inner__timer">
+            <img src="./images/gamefiles/gb_timer.png">
+            <span>1000</span>
+          </div>
+          <div class="game_inner__score">
+            <img src="./images/gamefiles/gb_score.png">
+            <span>₹0</span>
           </div>
         </div>
       </div>
-      <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js'></script>
-      <script src="js/grain.js"></script>
-      <script src="js/script.js"></script>
-      <script>
-          const el = document.querySelector('.grain');
-          if(el != null && el.length == 1){
-            const grain = new Grain(el);
-          }
-      </script>
+    </div>
+    <canvas class='grain'></canvas>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js'></script>
+    <script src="js/grain.js"></script>
+    <script src="js/script.js"></script>
+    <script>
+        const el = document.querySelector('.grain');
+        const grain = new Grain(el);
+    </script>
   </body>
 </html>
